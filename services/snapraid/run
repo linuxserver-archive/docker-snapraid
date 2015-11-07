@@ -1,3 +1,4 @@
 #!/bin/bash
 
-exec /sbin/setuser abc /usr/local/bin/snapraid --conf="/etc/snapraid.conf" sync
+#exec /sbin/setuser abc /usr/local/bin/snapraid --conf="/etc/snapraid.conf" sync
+#exec /sbin/setuser abc /usr/bin/python2.7 /app/snapraid-runner/snapraid-runner.py -c /config/snapraid-runner.conf

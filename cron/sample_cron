@@ -1,1 +1,1 @@
-* * * * * abc /path/to/command/to/run.sh
+*/2 * * * * python2.7 /app/snapraid-runner/snapraid-runner.py -c /config/snapraid-runner.conf
