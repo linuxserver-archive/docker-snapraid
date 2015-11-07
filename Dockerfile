@@ -1,11 +1,11 @@
 FROM linuxserver/baseimage
 MAINTAINER LinuxServer.io <ironicbadger@linuxserver.io>
 
-ENV APTLIST="snapraid"
+ENV APTLIST="snapraid python2.7 git"
 
 RUN add-apt-repository ppa:tikhonov/snapraid
-RUN apt-get update -q
-RUN apt-get install $APTLIST -y
+RUN apt-get update -qq
+RUN apt-get install $APTLIST -qy
     #apt-get clean && rm -rf /tmp/* /var/lib/apt/lists/* /var/tmp/*
 
 #Adding Custom files
