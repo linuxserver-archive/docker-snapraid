@@ -19,6 +19,4 @@ ADD cron/ /etc/cron.d/
 ADD defaults/ /defaults/
 RUN chmod -v +x /etc/service/*/run && chmod -v +x /etc/my_init.d/*.sh
 
-CMD ["/sbin/my_init"]
-
 VOLUME /mnt /config
