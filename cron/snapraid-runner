@@ -1,0 +1,1 @@
+30 0 * * * root /usr/bin/python2.7 /app/snapraid-runner/snapraid-runner.py -c /config/snapraid-runner.conf
