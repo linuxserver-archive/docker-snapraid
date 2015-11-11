@@ -6,8 +6,7 @@ ENV APTLIST="snapraid python2.7 git"
 RUN add-apt-repository ppa:tikhonov/snapraid && \
     apt-get update -qq && \
     apt-get install $APTLIST -qy && \
-    cd /app && \
-    git clone https://github.com/Chronial/snapraid-runner.git && \
+    git clone https://github.com/Chronial/snapraid-runner.git /app && \
     cp snapraid-runner/snapraid-runner.conf.example /defaults/snapraid-runner.conf.example && \
     chmod +x /app/snapraid-runner/snapraid-runner.py && \
     apt-get clean && rm -rf /tmp/* /var/lib/apt/lists/* /var/tmp/*
