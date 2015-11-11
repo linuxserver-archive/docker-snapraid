@@ -44,7 +44,7 @@ Part of what makes our containers work so well is by allowing you to specify you
 
 SnapRAID has a comprehensive manual available [here](http://www.snapraid.it/). Any SnapRAID command can be executed from the host easily using `docker exec -it <container-name> <command>`, for example `docker exec -it snapraid snapraid diff`.
 
-Note that by default snapraid-runner is set to run via cron at 00.30 daily.
+Note that by default snapraid-runner is set to run via cron at 00.30 daily. Tips and tricks on configuration snapraid-runner can be found on our [forums](https://forum.linuxserver.io/index.php?threads/snapraid-runner-script-email-issue.97).
 
 
 ## Updates
