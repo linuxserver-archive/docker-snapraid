@@ -1,7 +1,7 @@
 FROM linuxserver/baseimage
 MAINTAINER LinuxServer.io <ironicbadger@linuxserver.io>
 
-ENV APTLIST="snapraid python2.7 git screen"
+ENV APTLIST="snapraid python2.7 git"
 
 RUN add-apt-repository ppa:tikhonov/snapraid && \
     apt-get update -qq && \
