@@ -14,7 +14,6 @@ RUN add-apt-repository ppa:tikhonov/snapraid && \
 #Adding Custom files
 ADD init/ /etc/my_init.d/
 ADD cron/ /etc/cron.d/
-ADD defaults/ /defaults/
 RUN chmod -v +x /etc/service/*/run && chmod -v +x /etc/my_init.d/*.sh
 
 VOLUME /mnt /config
