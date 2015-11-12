@@ -8,12 +8,12 @@
 
 # test if snapraid.conf is in /config, copy from /defaults/snapraid.conf.example if not.
 [[ ! -f /config/snapraid.conf ]] && \
-  (cp /defaults/snapraid.conf.example /config/snapraid.conf && \
-  echo "No config found, copying default...")
+  echo "No config found. You must configure SnapRAID before running this container." && \
+  exit 1
 
 [[ ! -f /config/snapraid-runner.conf ]] && \
-  (cp /defaults/snapraid-runner.conf.example /config/snapraid-runner.conf) && \
-  echo "Runner config not found, copying default - please edit"
+  echo "No config found. You must configure snapraid-runner before running this container" && \
+  exit 1
 
 # test if link is made between /etc/snapraid.conf and /config/snapraid.conf, make if not
 [[ ! -L /etc/snapraid.conf ]] && ln -s /config/snapraid.conf /etc/snapraid.conf
