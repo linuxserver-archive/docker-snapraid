@@ -1,16 +1,14 @@
 #!/bin/bash
 
-#Check for /config/cron presence
-if [ ! -d /config/cron ] ; then
-	echo "You can create a folder called cron inside /config and add cron.d files to be loaded on boot."
-	exit 0
-fi
-shopt -s nullglob
-#Delete any except dockersupplied
-find /etc/cron.d/ -type f -not -name 'plexwatch' -delete
+# Inject user supplied cron files
+[[ ! -d /config/cron ]] && \
+  (echo "No cron jobs found to inject..." && \
+	exit 0)
 
+# Delete cron jobs except those supplied with this container
+find /etc/cron.d/ -type f -not -name 'snapraid-runner' -delete
 
-#inject any present files.
+# inject user supplied cron files
 for f in /config/cron/* ; do
     echo "injecting: $f"
     cp $f /etc/cron.d/
