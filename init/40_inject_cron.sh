@@ -4,8 +4,8 @@
 find /etc/cron.d/ -type f -not -name 'snapraid-runner' -delete
 
 # Inject user supplied cron files
-[[ -d /config/cron ]] && \
-  (for f in /config/cron/* ; do
-      echo "injecting: $f"
-      cp $f /etc/cron.d/
-  done)
+if [[ -d /config/cron ]] ; then
+  for f in /config/cron/* ; do
+    echo 'injecting cron file: "$f"'
+    cp $f /etc/cron.d/
+  done
