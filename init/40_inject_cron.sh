@@ -9,3 +9,4 @@ if [[ -d /config/cron ]] ; then
     echo 'injecting cron file: "$f"'
     cp $f /etc/cron.d/
   done
+fi
